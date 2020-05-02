@@ -34,7 +34,72 @@ public class PopulateDatabase {
 
                 String[] restaurantData = line.split(cvsSplitBy);
 
-                restaurantList.add(createRestaurantData(restaurantData));
+                // If restaurant is marked deleted, don't add to DB
+                if(!restaurantData[4].trim().toLowerCase().contains("deleted")
+                        && !restaurantData[4].trim().toLowerCase().contains("dishwash")
+                        && !restaurantData[4].trim().toLowerCase().contains("prep")
+                        && !restaurantData[4].trim().toLowerCase().contains("dishroom")
+                        && !restaurantData[4].trim().toLowerCase().contains("support kitchen")
+                        && !restaurantData[4].trim().toLowerCase().contains("main kitchen")
+                        && !restaurantData[4].trim().toLowerCase().contains("employee")
+                        && !restaurantData[4].trim().toLowerCase().contains("room service")
+                        && !restaurantData[4].trim().toLowerCase().contains("service bar")
+                        && !restaurantData[4].trim().toLowerCase().contains("drink station")
+                        && !restaurantData[4].trim().toLowerCase().contains("processing")
+                        && !restaurantData[4].trim().toLowerCase().contains("catering")
+                        && !restaurantData[4].trim().toLowerCase().contains("commissary")
+                        && !restaurantData[4].trim().toLowerCase().contains("concession")
+                        && !restaurantData[4].trim().toLowerCase().contains("storage")
+                        && !restaurantData[4].trim().toLowerCase().contains("svc bar")
+                        && !restaurantData[4].trim().toLowerCase().contains("7-eleven")
+                        && !restaurantData[4].trim().toLowerCase().contains("circle k")
+                        && !restaurantData[4].trim().toLowerCase().contains("produce")
+                        && !restaurantData[4].trim().toLowerCase().contains("rebel #")
+                        && !restaurantData[4].trim().toLowerCase().contains("front line")
+                        && !restaurantData[4].trim().toLowerCase().contains("holding kitchen")
+                        && !restaurantData[4].trim().toLowerCase().contains("snack bar")
+                        && !restaurantData[4].trim().toLowerCase().contains("elem school")
+                        && !restaurantData[4].trim().toLowerCase().contains("elementary school")
+                        && !restaurantData[4].trim().toLowerCase().contains("wal mart")
+                        && !restaurantData[4].trim().toLowerCase().contains("ullom")
+                        && !restaurantData[4].trim().toLowerCase().contains("albertsons")
+                        && !restaurantData[4].trim().toLowerCase().contains("cold line")
+                        && !restaurantData[4].trim().toLowerCase().contains("expo line")
+
+                        && !restaurantData[20].trim().toLowerCase().contains("deleted")
+                        && !restaurantData[20].trim().toLowerCase().contains("dishwash")
+                        && !restaurantData[20].trim().toLowerCase().contains("prep")
+                        && !restaurantData[20].trim().toLowerCase().contains("dishroom")
+                        && !restaurantData[20].trim().toLowerCase().contains("support kitchen")
+                        && !restaurantData[20].trim().toLowerCase().contains("main kitchen")
+                        && !restaurantData[20].trim().toLowerCase().contains("employee")
+                        && !restaurantData[20].trim().toLowerCase().contains("room service")
+                        && !restaurantData[20].trim().toLowerCase().contains("service bar")
+                        && !restaurantData[20].trim().toLowerCase().contains("drink station")
+                        && !restaurantData[20].trim().toLowerCase().contains("processing")
+                        && !restaurantData[20].trim().toLowerCase().contains("catering")
+                        && !restaurantData[20].trim().toLowerCase().contains("commissary")
+                        && !restaurantData[20].trim().toLowerCase().contains("concession")
+                        && !restaurantData[20].trim().toLowerCase().contains("storage")
+                        && !restaurantData[20].trim().toLowerCase().contains("svc bar")
+                        && !restaurantData[20].trim().toLowerCase().contains("7-eleven")
+                        && !restaurantData[20].trim().toLowerCase().contains("circle k")
+                        && !restaurantData[20].trim().toLowerCase().contains("produce")
+                        && !restaurantData[20].trim().toLowerCase().contains("rebel #")
+                        && !restaurantData[20].trim().toLowerCase().contains("front line")
+                        && !restaurantData[20].trim().toLowerCase().contains("holding kitchen")
+                        && !restaurantData[20].trim().toLowerCase().contains("snack bar")
+                        && !restaurantData[20].trim().toLowerCase().contains("elem school")
+                        && !restaurantData[20].trim().toLowerCase().contains("elementary school")
+                        && !restaurantData[20].trim().toLowerCase().contains("wal mart")
+                        && !restaurantData[20].trim().toLowerCase().contains("ullom")
+                        && !restaurantData[20].trim().toLowerCase().contains("albertsons")
+                        && !restaurantData[20].trim().toLowerCase().contains("cold line")
+                        && !restaurantData[20].trim().toLowerCase().contains("expo line")) {
+
+                    restaurantList.add(createRestaurantData(restaurantData));
+
+                }
 
             }
 
