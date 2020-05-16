@@ -19,7 +19,7 @@ public class RestaurantApiApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void populateDatabase() {
-		//populateDatabase.PopulateDB();
+		populateDatabase.PopulateDB();
 	}
 
 }

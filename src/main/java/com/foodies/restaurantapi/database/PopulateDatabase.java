@@ -34,7 +34,8 @@ public class PopulateDatabase {
 
                 String[] restaurantData = line.split(cvsSplitBy);
 
-                // If restaurant is marked deleted, don't add to DB
+                int categoryId = Integer.parseInt(restaurantData[3].trim());
+
                 if(!restaurantData[4].trim().toLowerCase().contains("deleted")
                         && !restaurantData[4].trim().toLowerCase().contains("dishwash")
                         && !restaurantData[4].trim().toLowerCase().contains("prep")
@@ -57,7 +58,7 @@ public class PopulateDatabase {
                         && !restaurantData[4].trim().toLowerCase().contains("rebel #")
                         && !restaurantData[4].trim().toLowerCase().contains("front line")
                         && !restaurantData[4].trim().toLowerCase().contains("holding kitchen")
-                        && !restaurantData[4].trim().toLowerCase().contains("snack bar")
+                        && !restaurantData[4].trim().toLowerCase().contains("snack")
                         && !restaurantData[4].trim().toLowerCase().contains("elem school")
                         && !restaurantData[4].trim().toLowerCase().contains("elementary school")
                         && !restaurantData[4].trim().toLowerCase().contains("wal mart")
@@ -65,6 +66,32 @@ public class PopulateDatabase {
                         && !restaurantData[4].trim().toLowerCase().contains("albertsons")
                         && !restaurantData[4].trim().toLowerCase().contains("cold line")
                         && !restaurantData[4].trim().toLowerCase().contains("expo line")
+                        && !restaurantData[4].trim().toLowerCase().contains("mcdonalds")
+                        && !restaurantData[4].trim().toLowerCase().contains("mcdonald's")
+                        && !restaurantData[4].trim().toLowerCase().contains("burger king")
+                        && !restaurantData[4].trim().toLowerCase().contains("taco bell")
+                        && !restaurantData[4].trim().toLowerCase().contains("kentucky fried chicken")
+                        && !restaurantData[4].trim().toLowerCase().contains("el pollo loco")
+                        && !restaurantData[4].trim().toLowerCase().contains("carl's jr")
+                        && !restaurantData[4].trim().toLowerCase().contains("del taco")
+                        && !restaurantData[4].trim().toLowerCase().contains("panda express")
+                        && !restaurantData[4].trim().toLowerCase().contains("subway")
+                        && !restaurantData[4].trim().toLowerCase().contains("little caesars")
+                        && !restaurantData[4].trim().toLowerCase().contains("sonic drive")
+                        && !restaurantData[4].trim().toLowerCase().contains("kfc")
+                        && !restaurantData[4].trim().toLowerCase().contains("dunkin donuts")
+                        && !restaurantData[4].trim().toLowerCase().contains("u swirl yogurt")
+                        && !restaurantData[4].trim().toLowerCase().contains("pizza hut")
+                        && !restaurantData[4].trim().toLowerCase().contains("papa john")
+                        && !restaurantData[4].trim().toLowerCase().contains("red lobster")
+                        && !restaurantData[4].trim().toLowerCase().contains("jack in the box")
+                        && !restaurantData[4].trim().toLowerCase().contains("wendy's")
+                        && !restaurantData[4].trim().toLowerCase().contains("arby's")
+                        && !restaurantData[4].trim().toLowerCase().contains("schlotzsky's")
+                        && !restaurantData[4].trim().toLowerCase().contains("church's chicken")
+                        && !restaurantData[4].trim().toLowerCase().contains("farmer boys")
+                        && !restaurantData[4].trim().toLowerCase().contains("quizno's")
+                        && !restaurantData[4].trim().toLowerCase().contains("jamba juice")
 
                         && !restaurantData[20].trim().toLowerCase().contains("deleted")
                         && !restaurantData[20].trim().toLowerCase().contains("dishwash")
@@ -88,16 +115,44 @@ public class PopulateDatabase {
                         && !restaurantData[20].trim().toLowerCase().contains("rebel #")
                         && !restaurantData[20].trim().toLowerCase().contains("front line")
                         && !restaurantData[20].trim().toLowerCase().contains("holding kitchen")
-                        && !restaurantData[20].trim().toLowerCase().contains("snack bar")
+                        && !restaurantData[20].trim().toLowerCase().contains("snack")
                         && !restaurantData[20].trim().toLowerCase().contains("elem school")
                         && !restaurantData[20].trim().toLowerCase().contains("elementary school")
                         && !restaurantData[20].trim().toLowerCase().contains("wal mart")
                         && !restaurantData[20].trim().toLowerCase().contains("ullom")
                         && !restaurantData[20].trim().toLowerCase().contains("albertsons")
                         && !restaurantData[20].trim().toLowerCase().contains("cold line")
-                        && !restaurantData[20].trim().toLowerCase().contains("expo line")) {
+                        && !restaurantData[20].trim().toLowerCase().contains("expo line")
+                        && !restaurantData[20].trim().toLowerCase().contains("mcdonalds")
+                        && !restaurantData[20].trim().toLowerCase().contains("mcdonald's")
+                        && !restaurantData[20].trim().toLowerCase().contains("burger king")
+                        && !restaurantData[20].trim().toLowerCase().contains("taco bell")
+                        && !restaurantData[20].trim().toLowerCase().contains("kentucky fried chicken")
+                        && !restaurantData[20].trim().toLowerCase().contains("el pollo loco")
+                        && !restaurantData[20].trim().toLowerCase().contains("carl's jr")
+                        && !restaurantData[20].trim().toLowerCase().contains("del taco")
+                        && !restaurantData[20].trim().toLowerCase().contains("panda express")
+                        && !restaurantData[20].trim().toLowerCase().contains("subway")
+                        && !restaurantData[20].trim().toLowerCase().contains("little caesars")
+                        && !restaurantData[20].trim().toLowerCase().contains("sonic drive")
+                        && !restaurantData[20].trim().toLowerCase().contains("kfc")
+                        && !restaurantData[20].trim().toLowerCase().contains("dunkin donuts")
+                        && !restaurantData[20].trim().toLowerCase().contains("u swirl yogurt")
+                        && !restaurantData[20].trim().toLowerCase().contains("pizza hut")
+                        && !restaurantData[20].trim().toLowerCase().contains("papa john")
+                        && !restaurantData[20].trim().toLowerCase().contains("red lobster")
+                        && !restaurantData[20].trim().toLowerCase().contains("jack in the box")
+                        && !restaurantData[20].trim().toLowerCase().contains("wendy's")
+                        && !restaurantData[20].trim().toLowerCase().contains("arby's")
+                        && !restaurantData[20].trim().toLowerCase().contains("schlotzsky's")
+                        && !restaurantData[20].trim().toLowerCase().contains("church's chicken")
+                        && !restaurantData[20].trim().toLowerCase().contains("farmer boys")
+                        && !restaurantData[20].trim().toLowerCase().contains("quizno's")
+                        && !restaurantData[20].trim().toLowerCase().contains("jamba juice")) {
 
-                    restaurantList.add(createRestaurantData(restaurantData));
+                    if(categoryId >= 1003 && categoryId <= 1008) {
+                        restaurantList.add(createRestaurantData(restaurantData));
+                    }
 
                 }
 
