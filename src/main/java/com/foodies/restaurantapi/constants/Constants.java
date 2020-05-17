@@ -21,6 +21,6 @@ public class Constants {
             "FROM restaurant_establishments\n" +
             "HAVING distance < ?\n" +
             "ORDER BY distance\n" +
-            "LIMIT 0, 10000";
+            "LIMIT 0, 100";
 
 }
