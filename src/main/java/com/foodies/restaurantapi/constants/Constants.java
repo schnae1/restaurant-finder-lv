@@ -21,6 +21,12 @@ public class Constants {
             "FROM restaurant_establishments\n" +
             "HAVING distance < ?\n" +
             "ORDER BY distance\n" +
-            "LIMIT 0, 100";
+            "LIMIT ?, ?";
+    public static final String SQL_GET_RESULTS_COUNT = "SELECT permit_number, restaurant_name, address, latitude,\n" +
+            "longitude, city_id, city_name, zip_code, search_text, ( 3959 * acos( cos( radians(?) ) * cos( radians( latitude ) ) \n" +
+            "    * cos( radians( longitude ) - radians(?) ) + sin( radians(?) ) * sin(radians(latitude)) ) ) AS distance \n" +
+            "FROM restaurant_establishments\n" +
+            "HAVING distance < ?\n" +
+            "ORDER BY distance";
 
 }

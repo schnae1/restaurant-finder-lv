@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class RestaurantDataAccessService implements RestaurantDao {
@@ -15,14 +17,25 @@ public class RestaurantDataAccessService implements RestaurantDao {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<Restaurant> getNearByRestaurants(double longitude, double latitude, int distance) {
+    public Map<String, Object> getNearByRestaurants(double longitude, double latitude, int distance, int offset, int row_count) {
 
         List<Restaurant> restaurants = jdbcTemplate.query(
                 Constants.SQL_GET_NEAREST_RESTAURANTS,
-                new Object[]{latitude, longitude, latitude, distance},
+                new Object[]{latitude, longitude, latitude, distance, offset, row_count},
                 new RestaurantRowMapper());
 
-        return restaurants;
+        List<Restaurant> results = jdbcTemplate.query(
+                Constants.SQL_GET_RESULTS_COUNT,
+                new Object[]{latitude, longitude, latitude, distance},
+                new RestaurantRowMapper());
+        Integer resultCount = new Integer(results.size());
+
+        Map<String, Object> response = new HashMap<String, Object>();
+
+        response.put("restaurants", restaurants);
+        response.put("totalNumOfResults", resultCount);
+
+        return response;
 
     }
 

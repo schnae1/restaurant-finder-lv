@@ -1,11 +1,9 @@
 package com.foodies.restaurantapi.dao;
 
-import com.foodies.restaurantapi.model.Restaurant;
-
-import java.util.List;
+import java.util.Map;
 
 public interface RestaurantDao {
 
-    public List<Restaurant> getNearByRestaurants(double longitude, double latitude, int distance);
+    public Map<String, Object> getNearByRestaurants(double longitude, double latitude, int distance, int offset, int row_count);
 
 }

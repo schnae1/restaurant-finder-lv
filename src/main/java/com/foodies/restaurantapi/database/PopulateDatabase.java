@@ -147,6 +147,9 @@ public class PopulateDatabase {
                         && !restaurantData[4].trim().toLowerCase().contains("mimi's cafe")
                         && !restaurantData[4].trim().toLowerCase().contains("jason's deli")
                         && !restaurantData[4].trim().toLowerCase().contains("olive garden")
+                        && !restaurantData[4].trim().toLowerCase().contains("tommy's world Famous")
+                        && !restaurantData[4].trim().toLowerCase().contains("wingstop")
+                        && !restaurantData[4].trim().toLowerCase().contains("cardenas market")
 
                         && !restaurantData[20].trim().toLowerCase().contains("deleted")
                         && !restaurantData[20].trim().toLowerCase().contains("dishwash")
@@ -259,7 +262,10 @@ public class PopulateDatabase {
                         && !restaurantData[20].trim().toLowerCase().contains("tgi fridays")
                         && !restaurantData[20].trim().toLowerCase().contains("mimi's cafe")
                         && !restaurantData[20].trim().toLowerCase().contains("jason's deli")
-                        && !restaurantData[20].trim().toLowerCase().contains("olive garden")) {
+                        && !restaurantData[20].trim().toLowerCase().contains("olive garden")
+                        && !restaurantData[20].trim().toLowerCase().contains("tommy's world Famous")
+                        && !restaurantData[20].trim().toLowerCase().contains("wingstop")
+                        && !restaurantData[20].trim().toLowerCase().contains("cardenas market")) {
 
                     if(categoryId >= 1003 && categoryId <= 1008) {
                         restaurantList.add(createRestaurantData(restaurantData));

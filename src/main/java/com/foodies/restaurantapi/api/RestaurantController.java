@@ -1,11 +1,10 @@
 package com.foodies.restaurantapi.api;
 
-import com.foodies.restaurantapi.model.Restaurant;
 import com.foodies.restaurantapi.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Map;
 
 @RequestMapping("api/v1/restaurants")
 @RestController
@@ -16,12 +15,14 @@ public class RestaurantController {
 
     @GetMapping
     @ResponseBody
-    public List<Restaurant> getNearRestaurants(
+    public Map<String, Object> getNearRestaurants(
             @RequestParam(required = true) double longitude,
             @RequestParam(required = true) double latitude,
-            @RequestParam(required = true) int distance) {
+            @RequestParam(required = true) int distance,
+            @RequestParam(defaultValue = "0") int offset,
+            @RequestParam(defaultValue = "100") int row_count) {
 
-        return restaurantService.getNearRestaurants(longitude, latitude, distance);
+        return restaurantService.getNearRestaurants(longitude, latitude, distance, offset, row_count);
 
     }
 
